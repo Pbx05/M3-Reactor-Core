@@ -1,3 +1,12 @@
+/**
+ * Renderiza la tabla de clasificación del Mundial de Constructores de Fórmula 1.
+ * Mapea las escuderías utilizando .map() con keys unívocas basadas en el ID de constructor,
+ * y muestra un estado vacío cuando la temporada no contiene registros (ej. temporadas previas a 1958).
+ *
+ * @param {Object} props
+ * @param {Array<Object>} props.constructores Lista de escuderías con posición, puntos y victorias
+ * @returns {JSX.Element} Tabla de clasificación de constructores o estado vacío
+ */
 export function ConstructorsTable({ constructores }) {
   if (constructores.length === 0) {
     return (

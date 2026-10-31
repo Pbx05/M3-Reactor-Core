@@ -1,3 +1,14 @@
+/**
+ * Componente que renderiza una cinta de métricas clave derivadas de la telemetría actual.
+ * Realiza cálculos directamente durante el render (líder provisional, total de victorias,
+ * puntos asignados y cantidad total de clasificados) sin almacenar estado redundante.
+ *
+ * @param {Object} props
+ * @param {Array<Object>} props.lista Lista filtrada de pilotos o constructores a evaluar
+ * @param {"pilotos"|"constructores"} props.vista Tipo de clasificación visualizada
+ * @param {string} props.temporada Año de la temporada en pantalla
+ * @returns {JSX.Element|null} Contenedor con métricas o null si la lista carece de elementos
+ */
 export function SummaryRibbon({ lista, vista, temporada }) {
   if (!lista || lista.length === 0) {
     return null;

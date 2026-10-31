@@ -1,3 +1,13 @@
+/**
+ * Cabecera principal de la aplicación de Fórmula 1.
+ * Contiene el isotipo oficial, títulos descriptivos y el selector controlado de temporadas,
+ * el cual genera la serie temporal desde 2025 hasta 1950 y comunica los cambios hacia el padre mediante onTemporadaChange.
+ *
+ * @param {Object} props
+ * @param {string} props.temporada Año de la temporada seleccionada actualmente
+ * @param {(nuevaTemporada: string) => void} props.onTemporadaChange Callback invocado al seleccionar una temporada distinta
+ * @returns {JSX.Element} Encabezado estructurado con selector de temporada
+ */
 export function Header({ temporada, onTemporadaChange }) {
   const anioActual = 2025;
   const temporadas = Array.from({ length: 76 }, (_, i) => String(anioActual - i));

@@ -1,3 +1,16 @@
+/**
+ * Barra de acciones, navegación por pestañas y filtrado.
+ * Implementa el patrón de control unidireccional recibiendo el estado actual
+ * y emitiendo eventos hacia el componente App mediante callbacks.
+ *
+ * @param {Object} props
+ * @param {"pilotos"|"constructores"} props.vista Vista de clasificación actualmente activa
+ * @param {(nuevaVista: "pilotos"|"constructores") => void} props.onVistaChange Callback para cambiar la pestaña activa
+ * @param {boolean} props.soloGanadores Indica si el filtro de solo ganadores de Gran Premio está activado
+ * @param {() => void} props.onToggleSoloGanadores Callback para alternar el estado del filtro de ganadores
+ * @param {() => void} props.onRecargar Callback para disparar la recarga de datos de la API
+ * @returns {JSX.Element} Barra de navegación y botones de acción
+ */
 export function ActionBar({
   vista,
   onVistaChange,

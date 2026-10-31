@@ -1,3 +1,12 @@
+/**
+ * Renderiza la tabla de clasificación de pilotos de Fórmula 1.
+ * Mapea la lista recibida mediante .map() asignando keys estables basadas en el identificador único,
+ * calcula las clases de podio (P1, P2, P3) y renderiza un estado vacío si no hay coincidencias con el filtro.
+ *
+ * @param {Object} props
+ * @param {Array<Object>} props.pilotos Lista de pilotos con sus puntuaciones y datos de escudería
+ * @returns {JSX.Element} Tabla de clasificación de pilotos o estado vacío
+ */
 export function DriversTable({ pilotos }) {
   if (pilotos.length === 0) {
     return (
