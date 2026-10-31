@@ -1,16 +1,22 @@
-# React + Vite
+## 🤖 Uso de IA
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+He utilizado la IA en este trabajo sobre todo para:
+* Planificar y verificar la descomposición de componentes en React.
+* Evitar errores en la extracción y normalización de los datos de la API Jolpi Ergast.
+* Verificar que estaba haciendo bien la migracion a react
 
-Currently, two official plugins are available:
+### Prompts principales
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+* **Migración a React Core**
+  > *Cual seria la forma mas adecuada de migrar mi aplicacion web a react?*
 
-## React Compiler
+### Validación del código
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+He tratado de evitar que me diera el código ya aplicado para comprender bien cada paso.
 
-## Expanding the ESLint configuration
+Para verificar lo generado, siempre leía la explicación, comprendía el motivo de la solución y continuaba con ella solo si me parecía correcta; si no, la corregía a mano por código propio de mejor calidad y comprension de lo que estaba haciendo.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🔍 Autopsia
+Una de las decisiones tomadas ha sido usar la función de inicialización perezosa de useState, esto asegura que la lectura síncrona a disco solo se ejecute una vez en el montaje inicial, y no en cada re-render del componente. Leer localStorage dentro de un useEffect tras el montaje, lo que habría provocado un render inicial con valores por defecto y un segundo render (con parpadeo visual) al cargar la preferencia guardada.
